@@ -7,8 +7,9 @@ const port = 3000;
 
 const app = express();
 
-app.use(express.static(fileURLToPath(new URL('../dist', import.meta.url))));
+app.use(express.json());
 
+app.use(express.static(fileURLToPath(new URL('../dist', import.meta.url))));
 
 // 路由
 app.use('/api/users', usersRouter);
